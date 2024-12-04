@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ListFournisseursController">
+   
+   <top>
+      <TitledPane prefHeight="5.0" text="Gestion de Fournisseurs" BorderPane.alignment="CENTER">
+         <content>
+            <MenuBar prefHeight="122.0" prefWidth="598.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Produits" />
+                <Menu mnemonicParsing="false" text="Fournisseurs">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="liste des fournisseurs" />
+                        <MenuItem fx:id="addFournisseurBtn" mnemonicParsing="false" onAction="#clickAddFournisseur" text="Ajouter des fournisseurs" />
+                     </items></Menu>
+                <Menu mnemonicParsing="false" text="Finance">
+                     <items>
+                        <MenuItem fx:id="financeBtn" mnemonicParsing="false" onAction="#clickFinanceButton" text="Finance" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="A propos">
+                     <items>
+                        <MenuItem fx:id="apropos" mnemonicParsing="false" onAction="#clickApropos" text="A propos SIP Academy" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="Deconnexion">
+                     <items>
+                        <MenuItem fx:id="deconnexion" mnemonicParsing="false" onAction="#deconnexion" text="Deconnexion" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </content>
+      </TitledPane>
+   </top>
+   <center>
+      <VBox maxHeight="200.0" prefHeight="280.0" prefWidth="898.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <HBox maxHeight="200.0" prefHeight="403.0" prefWidth="346.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/téléchargement.jpeg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" top="25.0" />
+                     </HBox.margin>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="List des Fournisseurs" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="60.0" top="70.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox minHeight="200.0" prefHeight="290.0" prefWidth="1000.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <children>
+                  <TableView fx:id="fournisseurTable" prefHeight="204.0" prefWidth="502.0">
+                    <columns>
+                      <TableColumn fx:id="nomColumn" prefWidth="133.60003662109375" text="Nom" />
+                      <TableColumn fx:id="adresseColumn" prefWidth="102.39996337890625" text="Adresse" />
+                        <TableColumn fx:id="telephoneColumn" minWidth="0.0" prefWidth="107.20001220703125" text="Telephone" />
+                        <TableColumn fx:id="emailColumn" prefWidth="156.800048828125" text="Email" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets left="250.0" top="20.0" />
+                     </HBox.margin>
+                  </TableView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <ToolBar prefHeight="37.0" prefWidth="898.0">
+         <items>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright@ISIKA 2022" translateX="380.0" wrappingWidth="130.01020050048828" />
+         </items>
+      </ToolBar>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SignInController">
+   <top>
+      <TitledPane prefHeight="5.0" text="Gestion de Fournisseurs" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <VBox maxHeight="200.0" prefHeight="280.0" prefWidth="898.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/téléchargement.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Se Connecter a SIP Academy">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" top="50.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets left="70.0" top="50.0" />
+               </VBox.margin>
+            </HBox>
+            <Label fx:id="errorLabel" text="Login et/ou mot de passe invalides, merci de réessayer !" textAlignment="CENTER" textFill="#ea0b0b" visible="false">
+               <VBox.margin>
+                  <Insets left="300.0" top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <GridPane hgap="50.0" prefHeight="92.0" prefWidth="718.0" vgap="30.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="397.39996337890625" minWidth="10.0" prefWidth="271.79998779296875" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="534.2000122070312" minWidth="10.0" prefWidth="534.2000122070312" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Login">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="mot de passe" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="email" maxWidth="250.0" prefHeight="26.0" prefWidth="375.0" GridPane.columnIndex="1" />
+                  <PasswordField fx:id="password" maxWidth="250.0" prefWidth="375.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <VBox.margin>
+                  <Insets left="230.0" top="50.0" />
+               </VBox.margin>
+            </GridPane>
+            <HBox prefHeight="35.0" prefWidth="898.0">
+               <children>
+                  <Button id="ajouterbtn" fx:id="signInBtn" maxHeight="100.0" mnemonicParsing="false" onAction="#signIn" text="Se Connecter" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="400.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </center>
+   <bottom>
+      <ToolBar prefHeight="37.0" prefWidth="898.0">
+         <items>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright@ISIKA 2022" translateX="380.0" wrappingWidth="130.01020050048828" />
+         </items>
+      </ToolBar>
+   </bottom>
+</BorderPane>
